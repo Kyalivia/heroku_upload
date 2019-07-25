@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+CRUD - Login
+{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col"></div>
+  <div class="col-6">
+      <div class="alert alert-primary" role="alert">
+          <strong>로그인</strong>
+      </div>
+      <form method="POST" action="{% url 'login'%}">
+          {% csrf_token %}
+          {{ login_form.as_p }}
+          <br>
+          <input type = "submit" value="Login" class='btn btn-outline-primary'>
+      </form>
+  </div>
+  <div class="col"></div>
+</div>
+{% endblock %}
